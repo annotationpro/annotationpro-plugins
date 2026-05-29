@@ -57,7 +57,7 @@ When creating new plugins, use the `Category#PluginName.cs` naming convention if
 
 ## Contributing
 
-Contributions from students, researchers and developers are welcome.
+Contributions from researchers, developers, and students are welcome.
 
 ## Annotation Pro
 
