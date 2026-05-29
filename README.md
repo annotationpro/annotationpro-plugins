@@ -21,6 +21,40 @@ docs/
 
 examples/
 
+## Plugin naming convention
+
+Annotation Pro uses the `#` character in plugin file names to create submenu entries in the Plugins menu.
+
+For example:
+
+```text
+Analysis#f0Estimation.cs
+```
+
+appears in Annotation Pro as:
+
+```text
+Plugins
+└── Analysis
+    └── f0Estimation
+```
+
+Similarly:
+
+```text
+Audio#Normalize.cs
+```
+
+appears as:
+
+```text
+Plugins
+└── Audio
+    └── Normalize
+```
+
+When creating new plugins, use the `Category#PluginName.cs` naming convention if you want the plugin to appear in a submenu.
+
 ## Contributing
 
 Contributions from students, researchers and developers are welcome.
