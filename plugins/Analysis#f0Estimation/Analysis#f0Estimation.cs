@@ -1,3 +1,17 @@
+/* 
+ * Analysis: f0 Estimation
+ * Estimate the fundamental frequency (F0) contour from speech recordings.
+ * Based on the Annotation Pro F0 estimation module (estimation method: pYIN by Mauch & Dixon; Annotation Pro implementer: H. Kuczka).
+ * See README.md for implementation notes and references.
+ *
+ * Plugin Author: Katarzyna Klessa
+ * Plugin Created: 2017-05-20
+ *
+ * Plugin Version: 1.0
+ *
+ */
+
+
 using AnnotationPro.Logic;
 using AnnotationPro.Presentation;  
 using AnnotationPro.Statistics;
