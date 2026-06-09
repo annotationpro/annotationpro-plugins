@@ -1,6 +1,6 @@
 /* 
- * Plugin Name: Rename specified layers
- * Plugin Description: Renames layers (specified by ‘layerName’ and 'newlayerName') for one or more files (Workspace Mode)
+ * Edit: Rename Specified Layers
+ * Automatically rename a layer with a predefined name to a new predefined name.
  * Plugin Author: Katarzyna Klessa
  * 
  * Plugin Version: 1.0
