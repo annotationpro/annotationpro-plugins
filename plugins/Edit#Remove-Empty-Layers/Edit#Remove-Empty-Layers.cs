@@ -1,5 +1,5 @@
 /*
- * Remove: Empty Layers
+ * Edit: Remove Empty Layers
  * Remove all annotation layers that do not contain any segments.
  */
 
