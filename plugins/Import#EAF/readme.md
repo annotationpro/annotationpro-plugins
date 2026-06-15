@@ -5,7 +5,7 @@ Import EAF is an Annotation Pro plugin that imports annotation layers from an EL
 
 The plugin automatically searches for an EAF file that has the same filename and is located in the same folder as the currently opened annotation file.
 
-Example
+## Example
 
 If the following files exist:
 
