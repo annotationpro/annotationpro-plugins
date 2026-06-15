@@ -37,7 +37,7 @@ The EAF file must have the same base filename as the annotation.
 Annotation Pro
 Existing annotation file (.ant / .antx)
 Matching ELAN file (.eaf)
-Typical Workflow
+## Typical Workflow
 Open an annotation in Annotation Pro.
 Ensure a matching .eaf file exists in the same folder.
 Run the plugin.
