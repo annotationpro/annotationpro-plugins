@@ -22,7 +22,7 @@ namespace AnnotationPro.Plugin
             string antxFilePath = annotation.FilePath;
             if (string.IsNullOrEmpty(antxFilePath))
             {
-                MessageBox.Show("Brak otwartego pliku ANTX.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("There is no ANTX file opened.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -30,7 +30,7 @@ namespace AnnotationPro.Plugin
             string eafFilePath = Path.ChangeExtension(antxFilePath, ".eaf");
             if (!File.Exists(eafFilePath))
             {
-                MessageBox.Show("Plik EAF nie został znaleziony: " + eafFilePath, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("An EAF file was not found: " + eafFilePath, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -57,7 +57,7 @@ namespace AnnotationPro.Plugin
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Błąd podczas importu pliku EAF:" + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error while importing an EAF file:" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
