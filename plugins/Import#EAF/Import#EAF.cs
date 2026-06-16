@@ -1,3 +1,7 @@
+/*
+ * Plugin Name: Import - EAF
+ * Plugin Description: Imports annotation layers from a matching ELAN (.eaf) file.
+ */
 using System;
 using System.IO;
 using System.Windows.Forms;
