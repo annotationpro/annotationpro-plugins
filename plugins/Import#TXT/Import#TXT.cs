@@ -34,7 +34,7 @@ namespace AnnotationPro.Plugin
             Audio audio = editor.Synchronizer.DataServer.Audio;
 
 
-            // musi byc otwarta anotacja
+            // An annotation must be open
             if (annotation.FilePath == string.Empty)
             {
                 MessageBox.Show("Open annotation file to add TXT layers", Application.ProductName);
@@ -43,17 +43,17 @@ namespace AnnotationPro.Plugin
 
             editor.Cursor = Cursors.WaitCursor;
 
-            // folder ANT
+            // ANT file folder
             string antFolder = Path.GetDirectoryName(annotation.FilePath);
 
 			string antTitle = Path.GetFileNameWithoutExtension(annotation.FilePath);
 
-			// chce zeby wzial tekst z pliku txt o nazwie takiej samej jak ant
+			// Use a TXT file with the same base name as the ANT file
 			string txtFileName = antTitle + txtExtension;
-			// txt file from ANT
+			// Full path to the TXT file corresponding to the ANT file
 			string txtFilePath = Path.Combine(antFolder, txtFileName);
 
-			// import if txt exists
+			// Import the TXT file if it exists
 			if (File.Exists(txtFilePath))
 			{
 				string content = File.ReadAllText(txtFilePath);
