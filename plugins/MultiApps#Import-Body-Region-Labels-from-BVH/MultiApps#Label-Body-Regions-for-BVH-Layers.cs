@@ -39,14 +39,14 @@ namespace AnnotationPro.Plugin
             return layers;
         }
         //metoda, metoda Run jest zawsze w pluginach AnnPro, jest w kontrakcie
-        //metody siê uruchamia a zmienne zapisuje, w klasie nie ma "zmiennych", zmienne w klasie nazywaj¹ siê fields i properties
+        //metody siÃª uruchamia a zmienne zapisuje, w klasie nie ma "zmiennych", zmienne w klasie nazywajÂ¹ siÃª fields i properties
         public void Run(AnnotationEditor editor)
         {
-            /// zmienne lokalne (te w metodzie) w klasie nazywa siê jednak zmiennymi
+            /// zmienne lokalne (te w metodzie) w klasie nazywa siÃª jednak zmiennymi
             annotation = editor.Synchronizer.DataServer.Annotation;
             audio = editor.Synchronizer.DataServer.Audio;
 
-            //wywo³anie funkcji SelectLayers, zmienna lokalna
+            //wywoÂ³anie funkcji SelectLayers, zmienna lokalna
             LayerCollection refLayers = SelectLayers();
             LayerObject srcLayer = annotation.Layers.FindByName(srcLayerName);
 
@@ -71,18 +71,18 @@ namespace AnnotationPro.Plugin
 
         public string DetermineBodyRegionLabel(SegmentObject srcSegment, List<LayerObject> refLayers)
         {
-            // Tworzymy mapê warstw referencyjnych
+            // Tworzymy mapÃª warstw referencyjnych
             Dictionary<string, LayerObject> referenceMap = refLayers.ToDictionary(l => l.Name, l => l);
 
-            // Obliczamy œrodek segmentu Ÿród³owego (czasowo)
+            // Obliczamy Å“rodek segmentu Å¸rÃ³dÂ³owego (czasowo)
             float centerTime = srcSegment.Start + srcSegment.Duration / 2f;
 
-            // Pozycja Y segmentu Ÿród³owego
+            // Pozycja Y segmentu Å¸rÃ³dÂ³owego
             float srcY;
             if (!float.TryParse(srcSegment.Label, out srcY))
                 return "Unknown";
 
-            // Pobieramy wartoœci Y z warstw referencyjnych w tym samym momencie czasowym
+            // Pobieramy wartoÅ“ci Y z warstw referencyjnych w tym samym momencie czasowym
             Dictionary<string, float?> refY = new Dictionary<string, float?>();
             foreach (string name in refLayerNames) // refLayerNames order from top to bottom
             {
@@ -103,7 +103,7 @@ namespace AnnotationPro.Plugin
                 }
             }
 
-            // Sprawdzamy zakresy miêdzy warstwami
+            // Sprawdzamy zakresy miÃªdzy warstwami
             for (int i = 0; i < refLayerNames.Count - 1; i++)
             {
                 string upper = refLayerNames[i];
@@ -114,7 +114,7 @@ namespace AnnotationPro.Plugin
                     float y1 = refY[upper].Value;
                     float y2 = refY[lower].Value;
 
-                    // Obs³uga ró¿nych kierunków osi Y
+                    // ObsÂ³uga rÃ³Â¿nych kierunkÃ³w osi Y
                     float top = Math.Max(y1, y2);
                     float bottom = Math.Min(y1, y2);
 
