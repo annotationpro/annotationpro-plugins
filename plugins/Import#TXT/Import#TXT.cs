@@ -1,5 +1,6 @@
-/* 
- * IMPORT: txt 
+/*
+ * Plugin Name: Import - TXT
+ * Plugin Description: Imports the contents of a matching TXT file into a new annotation layer.
  *
  * FOR WORKSPACE MODE
  * 
