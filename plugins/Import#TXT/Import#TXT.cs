@@ -57,18 +57,29 @@ namespace AnnotationPro.Plugin
 			// Import the TXT file if it exists
 			if (File.Exists(txtFilePath))
 			{
-				string content = File.ReadAllText(txtFilePath);
+    			string content = File.ReadAllText(txtFilePath);
 
-				SegmentObject segment = new SegmentObject();
-				segment.Start = audio.SamplesCount * 0.1f;
-				segment.End = audio.SamplesCount * 0.9f;
-				segment.Label = content;
-				
-				LayerObject txtLayer = editor.AnnotationLayers.AddNewLayer();
-				txtLayer.Name = "Phrase";					
-				txtLayer.Segments.Add(segment);
+    			SegmentObject segment = new SegmentObject();
+    			segment.Start = audio.SamplesCount * 0.1f;
+    			segment.End = audio.SamplesCount * 0.9f;
+    			segment.Label = content;
+
+    			LayerObject txtLayer = editor.AnnotationLayers.AddNewLayer();
+    			txtLayer.Name = "Phrase";
+    			txtLayer.Segments.Add(segment);
 			}
+			else
+			{
+    			MessageBox.Show(
+        		"TXT file not found:\n" + txtFilePath,
+        		Application.ProductName,
+        		MessageBoxButtons.OK,
+        		MessageBoxIcon.Warning
+    		);
 
+   			 editor.Cursor = Cursors.Default;
+    			return;
+			}
 			//annotation.IsModified = true;
 
             editor.RefreshLayers(false);
