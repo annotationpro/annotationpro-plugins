@@ -14,7 +14,7 @@ namespace AnnotationPro.Plugin
         {
 			var annotation = editor.Synchronizer.DataServer.Annotation;
 			
-            // Pobranie aktualnego pliku ANTX
+            // Get the currently opened ANTX file
             string antxFilePath = annotation.FilePath;
             if (string.IsNullOrEmpty(antxFilePath))
             {
@@ -22,7 +22,7 @@ namespace AnnotationPro.Plugin
                 return;
             }
 
-            // Znalezienie odpowiadającego pliku EAF
+            // Find the corresponding EAF file
             string eafFilePath = Path.ChangeExtension(antxFilePath, ".eaf");
             if (!File.Exists(eafFilePath))
             {
@@ -32,13 +32,13 @@ namespace AnnotationPro.Plugin
 
             try
             {
-                // Tworzenie obiektu ElanReader z odpowiednimi parametrami
+                // Create an ElanReader instance with the appropriate parameters
                 ElanReader elanReader = new ElanReader(eafFilePath, annotation.Samplerate);
                 
-                // Importowanie warstw z EAF
+                // Import layers from the EAF file
                 LayerCollection importedLayers = elanReader.Read();
                 
-                // Dodanie warstw do Annotation Pro
+                // Add imported layers to Annotation Pro
                 foreach (var layer in importedLayers)
                 {
                     editor.AnnotationLayers.AddNewLayer(layer);
