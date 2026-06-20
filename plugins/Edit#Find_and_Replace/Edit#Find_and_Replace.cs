@@ -1,13 +1,10 @@
-/* 
- * EDIT: Find & Replace
+/* * EDIT: Find & Replace
  * Replace one string by another or remove a string from (a collection of) annotations, ie. replace it by nothing 
  * Plugin Author: Wojciech Klessa & Katarzyna Klessa
  * Plugin Created: 2016-05-20
- * 
- * Plugin Id: 38d5ed60
+ * * Plugin Id: 38d5ed60
  * Plugin Version: 1.0
- * 
- */
+ * */
 
 using AnnotationPro.Logic;
 using AnnotationPro.Presentation;
@@ -17,20 +14,18 @@ namespace AnnotationPro.Plugin
 {
     public class AnnotationPlugin : IAnnotationPlugin
     {
-        //private readonly List<string> ignoreLayers = new List<string>() { "Layer_to_ignore", "Layer_to_ignore2" };
-        private readonly List<string> ignoreLayers = new List<string>() { "Input", "Word", "Syllable", "Phone", "Foregrounding Cluster", "Input", "Peak", "Peak", "Expressive Movement Unit", "Dynamic Musical Terms" };
+        // Usunięto duplikaty "Input" oraz "Peak" z listy warstw do zignorowania
+        private readonly List<string> ignoreLayers = new List<string>() { "Input", "Word", "Syllable", "Phone", "Foregrounding Cluster", "Peak", "Expressive Movement Unit", "Dynamic Musical Terms" };
         private readonly List<string> ignoreLabels = new List<string>() { "Label_to_ignore", "Label_to_ignore2", "Label_to_ignore3" };
 
         // add new patterns to create new replacement rule, you can either replace one string by another or remove a string, ie. replace it by nothing (then use string.Empty for the string to be used as a replacement)
         private readonly List<ReplacePattern> replacePatterns = new List<ReplacePattern>()
         {
-            //new ReplacePattern("string to remove or replace", "string to be used as a replacement"),
             new ReplacePattern("<p:>", string.Empty),
             new ReplacePattern("high Cluster", "high"),
             new ReplacePattern("low cluster", "low"),
             new ReplacePattern("(retraction) high Cluster", "high"),
             new ReplacePattern("low Cluster", "low"),
-
         };
 
         private Annotation annotation;
@@ -61,7 +56,6 @@ namespace AnnotationPro.Plugin
             }
 
             editor.SaveAnnotation();
-
         }
 
         private void ClearLayer(LayerObject layer)
