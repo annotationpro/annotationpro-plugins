@@ -1,18 +1,18 @@
 # Edit#Find-and-Replace
 
-## Opis
-Plugin `Edit#Find-and-Replace` to narzędzie dla programu Annotation Pro, pozwalające na masową zamianę ciągów znaków (znajdź i zamień) lub ich całkowite usunięcie (poprzez zamianę na ciąg pusty) wewnątrz etykiet anotacyjnych.
+## Description
+The `Edit#Find-and-Replace` plugin is a tool for Annotation Pro designed for bulk string replacement (find and replace) or complete removal (by replacing with an empty string) within annotation labels.
 
-## Funkcjonalność
-* **Filtrowanie warstw:** Skrypt automatycznie pomija wybrane warstwy (np. `Word`, `Syllable`, `Phone`, `Expressive Movement Unit`), dzięki czemu chroni dane pierwotne i surowe transkrypcje przed przypadkową modyfikacją.
-* **Filtrowanie etykiet:** Możliwość wykluczenia specyficznych etykiet z procesu zamiany.
-* **Zasady zamiany (ReplacePatterns):** Użytkownik definiuje w kodzie listę wzorców `ReplacePattern(szukany_tekst, zamiennik)`. Plugin automatycznie iteruje po wszystkich dopuszczonych segmentach i wykonuje operacje na tekście.
+## Features
+* **Layer Filtering:** The script automatically skips designated layers (e.g., `Word`, `Syllable`, `Phone`, `Expressive Movement Unit`), protecting primary data and raw transcriptions from accidental modification.
+* **Label Filtering:** Offers the ability to exclude specific labels from the replacement process.
+* **Replacement Rules (ReplacePatterns):** The user defines a list of `ReplacePattern(search_text, replacement)` patterns directly in the code. The plugin automatically iterates through all permitted segments and performs the text operations.
 
-## Zastosowanie w kodzie
-Aby dostosować plugin do własnych potrzeb analizy, edytuj poniższe listy w pliku `.cs`:
-- `ignoreLayers` - zbiór nazw warstw, które nie będą sprawdzane.
-- `ignoreLabels` - zbiór etykiet, które mają pozostać nietknięte.
-- `replacePatterns` - reguły podmiany tekstu. Aby usunąć ciąg znaków, jako argument "zamień" podaj `string.Empty`.
+## Code Customization
+To tailor the plugin to your specific analysis needs, modify the following lists within the `.cs` file:
+- `ignoreLayers` - a collection of layer names that will be skipped during processing.
+- `ignoreLabels` - a collection of labels that should remain untouched.
+- `replacePatterns` - text replacement rules. To remove a character string, use `string.Empty` as the replacement argument.
 
-## Autorzy
+## Authors
 Wojciech Klessa & Katarzyna Klessa (2016)
