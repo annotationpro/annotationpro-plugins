@@ -37,3 +37,13 @@ Looks for an `.eaf` file with the same base name as the open ANTx file, reads th
 Exports the MumoStance speech layers (Input, Word, Syllable, and Phone) to a Praat TextGrid format. 
 
 The TextGrid is written beside the annotation under the same base name. If that TextGrid already exists, the plugin leaves it unchanged.
+
+
+
+===
+
+#### About the MuMoStance Project
+
+The project: *MumoStance:* *Mltimodal Stancetaking: Expressive Movement and Affective Stance. Political Debates in German Bundestag and Polish Sejm*, was a German–Polish research project funded under the Beethoven programme by the Polish National Science Centre (NCN; UMO-2018/31/G/HS2/03633) and the German Research Foundation (DFG; MU 1587/3-1).
+
+The Polish research team was led by Maciej Karpiński, and the German team by Cornelia Müller. Katarzyna Klessa was responsible for coordinating corpus development and data management.
